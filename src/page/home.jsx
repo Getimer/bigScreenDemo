@@ -3,8 +3,8 @@ import './home.scss'
 
 const home=()=>{
     return(
-        <div>
-            <div className="x"/>
+        <div className="home">
+            <div className="header"><img src={require("../images/header-new.png")} alt={"none"}/></div>
         </div>
     )
 }
