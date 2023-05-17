@@ -18,6 +18,8 @@
     grid-template:
             "box1 box2 box4 box5" 426fr
             "box3 box3 box4 box5" 205fr/206fr 203fr 458fr 422fr;
+    grid-column-gap: px(28);
+    grid-row-gap: px(28);
 
   }
 
