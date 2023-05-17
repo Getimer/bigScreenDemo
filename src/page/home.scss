@@ -1,13 +1,45 @@
 @import "../shared/helper";
 .home{
-  header{
-    border:1px solid red;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+  > header{
+    height: px(79);
+    > img{
+      width: px(1920);
+
+    }
     background-size:cover;
+  }
+  > main{
+    flex: 1;
+    display: grid;
+    grid-template:
+            "box1 box2 box4 box5" 426fr
+            "box3 box3 box4 box5" 205fr/206fr 203fr 458fr 422fr;
+
   }
 
 }
-img{
-  width: px(1920);
-  height: px(79);
 
+.section1{
+  grid-area: box1;
+  background: pink;
+}
+.section2{
+  grid-area: box2;
+  background: gray;
+}
+.section3{
+  grid-area: box3;
+  background: cornflowerblue;
+}
+.section4{
+  grid-area: box4;
+  background: #61dafb;
+}
+.section5{
+  grid-area: box5;
+  background: lightgoldenrodyellow;
 }
