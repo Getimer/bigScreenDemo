@@ -17,8 +17,10 @@ const Chart2=()=>{
             },
             legend:{
                 show:true,
-                top:'90%',
-                left:'35%',
+                top:px(250),
+                left:px(100),
+                itemWidth: px(16),
+                itemHeight: px(9),
                 textStyle:{
                     fontSize:px(12),
                     color:'white',
@@ -84,7 +86,7 @@ const Chart2=()=>{
             ]
         }))
     },[])
-    return(<div className="bordered gxCount">
+    return(<div className="bordered phRank">
         <h2>案件破获排名</h2>
         <div ref={divRef} className="charts"></div>
     </div>)
