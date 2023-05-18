@@ -11,7 +11,8 @@ function Home(){
             <main>
                 <section className="section1">
                     <Chart1/>
-                    <Chart2/>
+                    <div className="charts2"><Chart2 /></div>
+
                 </section>
                 <section className="bordered section2">
 
