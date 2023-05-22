@@ -74,7 +74,7 @@ export const Chart6 = () => {
       <h2>全市犯罪人员籍贯分布地</h2>
       <div className="wrapper">
         <div ref={divRef} className="chart"/>
-        <div className="legend bordered">
+        <div className="legend">
           <span className="icon" style={{background: colors['甘肃省']}}/>甘岭籍
           <span className="icon" style={{background: colors['四川省']}}/>边城籍
           <span className="icon" style={{background: colors['青海省']}}/>寒国籍

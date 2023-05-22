@@ -1,16 +1,41 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import {px} from '../shared/px';
-import {baseEchartOptions} from '../shared/base-echart-options';
 import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart1 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+  const myChart = useRef(null);
+  const data = [
+    {name: '城关区',value: 10},
+    {name: '七里河区',value:20},
+    {name: '西固区',value: 36},
+    {name: '安宁区',value: 41},
+    {name: '红古区',value: 15},
+    {name: '永登县',value: 26},
+    {name: '皋兰县',value: 37},
+    {name: '榆中县',value: 18},
+    {name: '兰州新区',value: 29},
+  ];
+  useEffect(()=>{
+    setInterval(() => {
+      const newData = [
+        {name: '城关区',value: Math.random() * 50},
+        {name: '七里河区',value: Math.random() * 50},
+        {name: '西固区',value: Math.random() * 50},
+        {name: '安宁区',value: Math.random() * 50},
+        {name: '红古区',value: Math.random() * 50},
+        {name: '永登县',value: Math.random() * 50},
+        {name: '皋兰县',value: Math.random() * 50},
+        {name: '榆中县',value: Math.random() * 50},
+        {name: '兰州新区',value: Math.random() * 50},
+      ];
+      x(newData);
+    }, 1000);
+  },[])
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       xAxis: {
-        data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
+        data:data.map(i=>i.name),
         axisTick: {show: false},
         axisLine: {
           lineStyle: {color: '#083B70'}
@@ -37,9 +62,13 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+        data:data.map(i=>i['value'])
       }]
     }));
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
   }, []);
 
   return (

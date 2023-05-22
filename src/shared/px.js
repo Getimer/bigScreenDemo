@@ -1,4 +1,1 @@
-const px=(n)=>{
-    return n/1920*window.pageWidth
-}
-export default px
+export const px =(n)=>n/2420*window.pageWidth;

@@ -1,28 +1,18 @@
-import px from "./px";
+import {px} from './px';
 
-const baseEchartOption={
-    textStyle:{
-        fontSize:px(12),
-        color:'#79839E'
+export const baseEchartOptions = {
+
+    textStyle: {
+        fontSize: px(12),
+        color: '#79839E'
     },
-    title:{
-        show:false
-    },
-    legend:{
-        show:false
-    },
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'shadow'
-        }
-    },
+    title: {show: false},
+    legend: {show: false},
     grid: {
-        x: px(22),
-        y: px(22),
-        x2: px(22),
-        y2:px(22),
+        x: px(20),
+        y: px(20),
+        x2: px(20),
+        y2: px(20),
         containLabel: true
     },
- }
- export default baseEchartOption
+};

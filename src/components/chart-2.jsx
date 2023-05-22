@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import {px} from '../shared/px';
-import {baseEchartOptions} from '../shared/base-echart-options';
+
 import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart2 = () => {
@@ -16,23 +15,23 @@ export const Chart2 = () => {
     {name: '永登县公安局', 2011: 2, 2012: 3},
     {name: '皋兰县公安局', 2011: 2, 2012: 3},
     {name: '榆中县公安局', 2011: 2, 2012: 3},
-    {name: '新区公安局', 2011: 2, 2012: 3},
+    {name: '兰州新区公安局', 2011: 2, 2012: 3},
   ];
   useEffect(() => {
     setInterval(() => {
       const newData = [
-        {name: '城关区公安局', 2011: 2, 2012: Math.random() * 10},
-        {name: '七里河区公安局', 2011: 2, 2012: 3},
-        {name: '西固区公安局', 2011: 2, 2012: 3},
-        {name: '安宁区公安局', 2011: 2, 2012: 3},
-        {name: '红古区公安局', 2011: 2, 2012: 3},
-        {name: '永登县公安局', 2011: 2, 2012: 3},
-        {name: '皋兰县公安局', 2011: 2, 2012: 3},
-        {name: '榆中县公安局', 2011: 2, 2012: 3},
-        {name: '新区公安局', 2011: 2, 2012: 3},
+        {name: '城关区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '七里河区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '西固区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '安宁区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '红古区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '永登县公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '皋兰县公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '榆中县公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
+        {name: '兰州新区公安局', 2011: Math.random() * 10, 2012: Math.random() * 10},
       ];
       x(newData);
-    }, 1000);
+    }, 1500);
   }, []);
   const x = (data) => {
     myChart.current.setOption(createEchartsOptions({
@@ -99,8 +98,8 @@ export const Chart2 = () => {
       <h2>案件破获排名</h2>
       <div ref={divRef} className="chart"/>
       <div className="legend">
-        <span className="first"/> 破案排名1
-        <span className="second"/> 破案排名2
+        <span className="first"/> 刑事案件
+        <span className="second"/> 民事案件
       </div>
     </div>
   );
