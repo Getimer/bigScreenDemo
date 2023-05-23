@@ -7,7 +7,10 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Home/>,
-    }
-
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        element: <Home/>,
+    },
 ]);
 export default router
